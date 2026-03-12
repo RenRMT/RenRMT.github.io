@@ -40,9 +40,9 @@ const DATA_COLOURS = {
   ]
 };
 const RAMPS = {
-  Blue:["#004770","#005F96","#0077BB","#66ADD6","#99C9E4","#CCE4F1","#E6F1F8"],
+  Steel:["#004770","#005F96","#0077BB","#66ADD6","#99C9E4","#CCE4F1","#E6F1F8"],
   Coral:["#99523D","#CC6D52","#FF8866","#FFB8A3","#FFCFC2","#FFE7E0","#FFF3F0"],
-  Skyblue:["#477A99","#5FA3CC","#77CCFF","#92D6FF","#ADE0FF","#C9EBFF","#E4F5FF"],
+  Sky:["#477A99","#5FA3CC","#77CCFF","#92D6FF","#ADE0FF","#C9EBFF","#E4F5FF"],
   Verdigris:["#003D36","#005C52","#009988","#66C2B8","#99D6CF","#CCEBE7","#E6F5F3"],
   Gold:["#A38800","#E0BB00","#FFDD33","#FFEB85","#FFF1AD","#FFF8D6","#FFFCEB"],
   Rust:["#441B00","#662900","#AA4400","#BB6933","#CC8F66","#DDB499","#EEDACC"],
@@ -51,8 +51,8 @@ const RAMPS = {
 const PRIORITY = [2,6,4,0,1,5,3];
 
 // STATE
-let singleColour='Blue', singleSteps=7;
-let divergingLeft='Gold', divergingRight='Blue', divergingSteps=7;
+let singleColour='Steel', singleSteps=7;
+let divergingLeft='Gold', divergingRight='Steel', divergingSteps=7;
 
 // UTILS
 const clamp = (n,min,max)=>Math.max(min,Math.min(max,n));
