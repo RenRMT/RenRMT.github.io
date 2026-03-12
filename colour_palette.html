@@ -143,17 +143,17 @@ const BRAND = {
     { name:'Primary Blue', value:'#1b4ba7' }, { name:'Dark Blue', value:'#07142c' }, { name:'Black', value:'#02020a' }, { name:'Light Grey', value:'#f9f9f9' }
   ],
   NEUTRAL: [
-    {name:'Neutral light', value:'#CCCCCC'}, {name:'Neutral', value:'#BBBBBB'}, {name:'Neutral dark', value:'#9C9C9C'}
+    {name:'Silver', value:'#CCCCCC'}, {name:'Steel', value:'#BBBBBB'}, {name:'Ash', value:'#9C9C9C'}
   ]
 };
 const DATA_COLOURS = {
   contrasting: [
-    {name:'Steel',value:'#0077BB'}, {name:'Coral',value:'#FF8866'}, {name:'Sky',value:'#77CCFF'}, {name:'Verdigris',value:'#009988'},
-    {name:'Gold',value:'#FFDD33'}, {name:'Rust',value:'#AA4400'}, {name:'Lavender',value:'#AA99EE'}, {name:'Neutral light',value:'#CCCCCC'}
+    {name:'Ocean',value:'#0077BB'}, {name:'Coral',value:'#FF8866'}, {name:'Sky',value:'#77CCFF'}, {name:'Pine',value:'#009988'},
+    {name:'Gold',value:'#FFDD33'}, {name:'Rust',value:'#AA4400'}, {name:'Lavender',value:'#AA99EE'}, {name:'Silver',value:'#CCCCCC'}
   ],
   rainbow: [
-    {name:'Steel',value:'#0077BB'}, {name:'Sky',value:'#77CCFF'}, {name:'Lavender',value:'#AA99EE'}, {name:'Verdigris',value:'#009988'},
-    {name:'Gold',value:'#FFDD33'}, {name:'Coral',value:'#FF8866'}, {name:'Rust',value:'#AA4400'}, {name:'Neutral light',value:'#CCCCCC'}
+    {name:'Ocean',value:'#0077BB'}, {name:'Sky',value:'#77CCFF'}, {name:'Lavender',value:'#AA99EE'}, {name:'Pine',value:'#009988'},
+    {name:'Gold',value:'#FFDD33'}, {name:'Coral',value:'#FF8866'}, {name:'Rust',value:'#AA4400'}, {name:'Silver',value:'#CCCCCC'}
   ]
 };
 const RAMPS = {
@@ -168,8 +168,8 @@ const RAMPS = {
 const PRIORITY = [2,6,4,1,5,3,0];
 
 // STATE
-let singleColour='Steel', singleSteps=7;
-let divergingLeft='Gold', divergingRight='Steel', divergingSteps=7;
+let singleColour='Ocean', singleSteps=7;
+let divergingLeft='Gold', divergingRight='Ocean', divergingSteps=7;
 
 // UTILS
 const clamp = (n,min,max)=>Math.max(min,Math.min(max,n));
