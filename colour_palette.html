@@ -27,16 +27,19 @@ select.steps{padding:6px 8px;border-radius:6px;border:1px solid #ccc;background:
 const BRAND = {
   CORP: [
     { name:'Primary Blue', value:'#1b4ba7' }, { name:'Dark Blue', value:'#07142c' }, { name:'Black', value:'#02020a' }, { name:'Light Grey', value:'#f9f9f9' }
+  ],
+  NEUTRAL: [
+    {name:'Neutral light', value:'#CCCCCC'}, {name:'Neutral', value:'#BBBBBB'}, {name:'Neutral dark', value:'#9C9C9C'}
   ]
 };
 const DATA_COLOURS = {
   contrasting: [
-    {name:'Steel blue',value:'#0077BB'}, {name:'Coral',value:'#FF8866'}, {name:'Sky blue',value:'#77CCFF'}, {name:'Verdigris',value:'#009988'},
-    {name:'Gold',value:'#FFDD33'}, {name:'Rust red',value:'#AA4400'}, {name:'Lavender',value:'#AA99EE'}, {name:'Light grey',value:'#CCCCCC'}
+    {name:'Steel',value:'#0077BB'}, {name:'Coral',value:'#FF8866'}, {name:'Sky',value:'#77CCFF'}, {name:'Verdigris',value:'#009988'},
+    {name:'Gold',value:'#FFDD33'}, {name:'Rust',value:'#AA4400'}, {name:'Lavender',value:'#AA99EE'}, {name:'Neutral light',value:'#CCCCCC'}
   ],
   rainbow: [
-    {name:'Steel blue',value:'#0077BB'}, {name:'Sky blue',value:'#77CCFF'}, {name:'Lavender',value:'#AA99EE'}, {name:'Verdigris',value:'#009988'},
-    {name:'Gold',value:'#FFDD33'}, {name:'Coral',value:'#FF8866'}, {name:'Rust red',value:'#AA4400'}, {name:'Light grey',value:'#CCCCCC'}
+    {name:'Steel',value:'#0077BB'}, {name:'Sky',value:'#77CCFF'}, {name:'Lavender',value:'#AA99EE'}, {name:'Verdigris',value:'#009988'},
+    {name:'Gold',value:'#FFDD33'}, {name:'Coral',value:'#FF8866'}, {name:'Rust',value:'#AA4400'}, {name:'Neutral light',value:'#CCCCCC'}
   ]
 };
 const RAMPS = {
@@ -177,13 +180,16 @@ function buildSections(){
   return [
     {
       title:'Brand Colours',
-      groups:[{name:'Corporate Brand',colors:BRAND.CORP}]
+      groups:[
+        {name:'Corporate brand',colors:BRAND.CORP},
+        {name:'Neutral shades', colors:BRAND.NEUTRAL}
+      ]
     },
     {
       title:'Data Colours',
       groups:[
-        {name:'Contrasting',colors:DATA_COLOURS.contrasting},
-        {name:'Rainbow',colors:DATA_COLOURS.rainbow}
+        {name:'Complementary order',colors:DATA_COLOURS.contrasting},
+        {name:'Analogous order',colors:DATA_COLOURS.rainbow}
       ]
     },
     {
