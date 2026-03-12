@@ -2,19 +2,133 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Colour Palette</title>
 
 <style>
-body{font-family:Arial,sans-serif;background:#f9f9f9;margin:20px}
-h1,h2,h3{margin-top:32px}.palette-section{margin-bottom:40px}.palette-group{margin-bottom:24px}
-.palette{display:grid;grid-template-columns:repeat(auto-fill,minmax(110px,1fr));gap:15px;max-width:1100px}
-.color-box{--box-color:#000;background:var(--box-color);height:120px;border-radius:8px;display:flex;flex-direction:column;justify-content:flex-end;position:relative;box-shadow:0 2px 6px rgba(0,0,0,.15);cursor:pointer;transition:transform .2s;border:none;text-align:left}
-.color-box:hover{transform:scale(1.05)}
-.caption{background:rgba(255,255,255,.85);font-size:13px;padding:4px;border-radius:0 0 8px 8px;text-align:center}
-.caption strong{display:block}.copied{position:absolute;top:6px;right:6px;background:rgba(0,0,0,.75);color:#fff;padding:3px 6px;border-radius:4px;font-size:12px;opacity:0;pointer-events:none;transition:opacity .2s}.copied.visible{opacity:1}
-.controls{display:flex;align-items:center;gap:10px;margin:8px 0 16px 0;font-size:14px}
-.controls label{font-weight:700}
-select.steps{padding:6px 8px;border-radius:6px;border:1px solid #ccc;background:#fff}
+    body {
+        font-family: Arial, sans-serif;
+        background: #f9f9f9;
+        margin: 16px;
+    }
+
+    h1, h2, h3 {
+        margin-top: 32px;
+    }
+
+    .palette-section {
+        margin-bottom: 40px;
+    }
+
+    .palette-group {
+        margin-bottom: 24px;
+    }
+
+    /* Responsive Grid */
+    .palette {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(90px, 1fr));
+        gap: 12px;
+        width: 100%;
+    }
+
+    /* Color box */
+    .color-box {
+        --box-color: #000;
+        background: var(--box-color);
+        height: 110px;
+        border-radius: 8px;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        position: relative;
+        box-shadow: 0 2px 6px rgba(0,0,0,.15);
+        cursor: pointer;
+        transition: transform .2s;
+        border: none;
+        text-align: left;
+    }
+
+    .color-box:hover {
+        transform: scale(1.05);
+    }
+
+    .caption {
+        background: rgba(255,255,255,.85);
+        font-size: 12px;
+        padding: 4px;
+        border-radius: 0 0 8px 8px;
+        text-align: center;
+    }
+
+    .caption strong {
+        display: block;
+    }
+
+    .copied {
+        position: absolute;
+        top: 6px;
+        right: 6px;
+        background: rgba(0,0,0,.75);
+        color: #fff;
+        padding: 3px 6px;
+        border-radius: 4px;
+        font-size: 12px;
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity .2s;
+    }
+
+    .copied.visible {
+        opacity: 1;
+    }
+
+    /* Controls */
+    .controls {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        margin: 8px 0 16px 0;
+        font-size: 14px;
+    }
+
+    .controls label {
+        font-weight: 700;
+        min-width: 80px;
+    }
+
+    .steps {
+        padding: 6px 8px;
+        border-radius: 6px;
+        border: 1px solid #ccc;
+        background: #fff;
+        min-width: 100px;
+    }
+
+    /* MOBILE TWEAKS */
+    @media (max-width: 600px) {
+        .palette {
+            grid-template-columns: repeat(auto-fill, minmax(70px, 1fr));
+            gap: 10px;
+        }
+
+        .color-box {
+            height: 90px;
+        }
+
+        .controls {
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+        .controls label {
+            min-width: auto;
+        }
+
+        body {
+            margin: 12px;
+        }
+    }
 </style>
 </head>
 
@@ -188,8 +302,8 @@ function buildSections(){
     {
       title:'Data Colours',
       groups:[
-        {name:'Complementary order',colors:DATA_COLOURS.contrasting},
-        {name:'Analogous order',colors:DATA_COLOURS.rainbow}
+        {name:'Contrasting order',colors:DATA_COLOURS.contrasting},
+        {name:'Rainbow order',colors:DATA_COLOURS.rainbow}
       ]
     },
     {
