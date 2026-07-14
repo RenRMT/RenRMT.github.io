@@ -195,7 +195,7 @@ function generateSingleRamp(name, steps){
   const arr = RAMPS[name];
   const n = clamp(steps,1,arr.length);
   return PRIORITY.slice(0,n).sort((a,b)=>a-b)
-    .map((i,k)=>({name:`${name} ${k+1}`, value:arr[i]}));
+  .map(i=>({name:`${name} ${i+1}`, value:arr[i]}));
 }
 
 function generateDivergingRamp(left,right,steps){
@@ -207,8 +207,8 @@ function generateDivergingRamp(left,right,steps){
 
   const L = RAMPS[left], R = RAMPS[right];
 
-  const leftRamp  = idx.map((i,k)=>({name:`${left} ${k+1}`, value:L[i]})).reverse();
-  const rightRamp = idx.map((i,k)=>({name:`${right} ${k+1}`, value:R[i]}));
+  const leftRamp  = idx.map(i=>({name:`${left} ${i+1}`, value:L[i]})).reverse();
+  const rightRamp = idx.map(i=>({name:`${right} ${i+1}`, value:R[i]}));
 
   return [...leftRamp, {name:'Neutral',value:'#F9F9F9'}, ...rightRamp];
 }
