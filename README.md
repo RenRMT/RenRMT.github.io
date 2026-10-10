@@ -2,7 +2,7 @@
 
 Personal hub site at [rendata.nl](https://rendata.nl): projects, blog and links to everything else hosted on this GitHub Pages domain. Built with Jekyll 4.4 and the Getij theme, deployed by GitHub Actions (`.github/workflows/pages.yml`).
 
-Project sites in other repos (`/iati-scout/`, `/style_guide/`, `/color-picker/` and so on) are served by GitHub alongside this one. Never create a folder here with the same name as one of those repos.
+Project sites in other repos (`/iati-scout/`, `/style-guide/`, `/color-picker/` and so on) are served by GitHub alongside this one. Never create a folder here with the same name as one of those repos.
 
 ## Content
 
