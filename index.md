@@ -1,11 +1,11 @@
 ---
 layout: home
 eyebrow: Hello
-title: I build tools that make data trustworthy and charts look right.
+title: I build tools that make aid data work
 buttons:
   - title: Work
     url: /work/
   - title: Play
     url: /play/
 ---
-Data quality checks, pipelines, Excel add-ins and colour tools for work, and maps, mods and photos for fun.
+Data pipelines and quality checks for humanitarian and aid data, chart styling tools, and a few side projects.
