@@ -1,6 +1,6 @@
-# renrmt.github.io
+# rendata.nl
 
-Personal hub site: projects, blog and links to everything else hosted on this GitHub Pages domain. Built with Jekyll 4.4 and the Getij theme, deployed by GitHub Actions (`.github/workflows/pages.yml`).
+Personal hub site at [rendata.nl](https://rendata.nl): projects, blog and links to everything else hosted on this GitHub Pages domain. Built with Jekyll 4.4 and the Getij theme, deployed by GitHub Actions (`.github/workflows/pages.yml`).
 
 Project sites in other repos (`/iati-scout/`, `/style_guide/`, `/color-picker/` and so on) are served by GitHub alongside this one. Never create a folder here with the same name as one of those repos.
 
@@ -34,4 +34,4 @@ After the first `bundle install`, run `bundle lock --add-platform x86_64-linux` 
 
 ## Deploy
 
-Pushing to `main` builds and deploys. In the repo's **Settings → Pages**, set **Source** to **GitHub Actions**.
+Pushing to `main` builds and deploys. In the repo's **Settings → Pages**, set **Source** to **GitHub Actions**. The custom domain `rendata.nl` is set there too (no `CNAME` file is needed with an Actions deploy); `url` in `_config.yml` must match it.

@@ -11,5 +11,5 @@ I believe data-driven work should be data supported work. I help people transfor
 ## Elsewhere
 
 - [GitHub](https://github.com/RenRMT)
-- [LinkedIn](https://linkedin/com/in/renzeterpstra)
+- [LinkedIn](https://www.linkedin.com/in/renzeterpstra/)
 - [RSS feed]({{ '/feed.xml' | relative_url }})
