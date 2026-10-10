@@ -1,0 +1,12 @@
+{%- comment -%}
+  Filter chips for the list with id `include.target`. Items in that list
+  carry `data-tags="a|b"`; groups marked `data-filter-group` hide when empty.
+{%- endcomment -%}
+{% assign all_tags = "" | split: "" %}
+{% for item in include.items %}{% for t in item.tags %}{% unless all_tags contains t %}{% assign all_tags = all_tags | push: t %}{% endunless %}{% endfor %}{% endfor %}
+{% if all_tags.size > 1 %}
+<div class="filters" role="group" aria-label="Filter by tag" data-filters="{{ include.target }}">
+  <button class="chip" type="button" data-filter="" aria-pressed="true">All</button>
+  {% for t in all_tags %}<button class="chip" type="button" data-filter="{{ t }}" aria-pressed="false">{{ t }}</button>{% endfor %}
+</div>
+{% endif %}

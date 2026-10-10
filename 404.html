@@ -1,0 +1,35 @@
+---
+layout: default
+title: Page not found
+permalink: /404.html
+sitemap: false
+---
+<section class="notfound">
+  <div class="tide" aria-hidden="true">
+    <svg viewBox="0 0 800 220" preserveAspectRatio="xMidYMax slice" focusable="false">
+      <line class="tide__mark" x1="0" y1="52" x2="800" y2="52"/>
+      <text class="tide__label" x="400" y="40" text-anchor="middle">high water · this page was here</text>
+      <path class="tide__wave tide__wave--1" d="M0 118 q40 -8 80 0 t80 0 t80 0 t80 0 t80 0 t80 0 t80 0 t80 0 t80 0 t80 0 t80 0 t80 0 V220 H0 Z"/>
+      <g transform="translate(400 132) rotate(-14)">
+        <g class="tide__bob">
+          <rect class="tide__glass" x="22" y="-8" width="24" height="16" rx="4"/>
+          <rect class="tide__cork" x="44" y="-7" width="10" height="14" rx="2"/>
+          <rect class="tide__glass" x="-48" y="-19" width="76" height="38" rx="13"/>
+          <rect class="tide__paper" x="-38" y="-11" width="54" height="22" rx="3"/>
+          <text class="tide__text" x="-11" y="5" text-anchor="middle">404</text>
+          <path class="tide__shine" d="M-34 -14 h36"/>
+        </g>
+      </g>
+      <path class="tide__wave tide__wave--2" d="M0 140 q60 -12 120 0 t120 0 t120 0 t120 0 t120 0 t120 0 t120 0 t120 0 t120 0 V220 H0 Z"/>
+      <path class="tide__wave tide__wave--3" d="M0 164 q80 -10 160 0 t160 0 t160 0 t160 0 t160 0 t160 0 t160 0 V220 H0 Z"/>
+    </svg>
+  </div>
+
+  <p class="eyebrow">404 · Page not found</p>
+  <h1>This page drifted out with the tide.</h1>
+  <p class="lead">The link may be old, or the page has moved. It might wash up somewhere below.</p>
+  <div class="notfound__actions">
+    <a class="button" href="{{ '/' | relative_url }}">Back home</a>
+    {% for item in site.nav offset: 1 %}<a class="button button--outline" href="{{ item.url | relative_url }}">{{ item.title }}</a>{% endfor %}
+  </div>
+</section>

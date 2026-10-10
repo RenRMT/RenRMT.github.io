@@ -1,0 +1,29 @@
+<aside class="sidebar">
+  <a class="sidebar__id" href="{{ '/' | relative_url }}">
+    {% if site.avatar %}<img class="sidebar__avatar" src="{{ site.avatar | relative_url }}" alt="">{% else %}<span class="sidebar__avatar sidebar__avatar--empty" aria-hidden="true"></span>{% endif %}
+    <span class="sidebar__name">{{ site.title }}</span>
+  </a>
+  {% if site.tagline %}<p class="sidebar__tagline">{{ site.tagline }}</p>{% endif %}
+
+  <nav class="sidebar__nav" aria-label="Main">
+    {% for item in site.nav %}
+      {% assign active = false %}
+      {% if item.url == '/' %}
+        {% if page.url == '/' or page.url == '/index.html' %}{% assign active = true %}{% endif %}
+      {% elsif page.url contains item.url %}
+        {% assign active = true %}
+      {% endif %}
+      <a href="{{ item.url | relative_url }}"{% if active %} aria-current="page"{% endif %}>{{ item.title }}</a>
+    {% endfor %}
+  </nav>
+
+  <div class="sidebar__foot">
+    <div class="sidebar__social">
+      {% for s in site.social %}<a href="{{ s.url | relative_url }}">{{ s.title }}</a>{% endfor %}
+    </div>
+    <button class="theme-toggle" type="button" data-theme-toggle aria-label="Toggle dark mode">
+      <span class="theme-toggle__track" aria-hidden="true"><span class="theme-toggle__knob"></span></span>
+      <span class="theme-toggle__label" data-theme-label>Light</span>
+    </button>
+  </div>
+</aside>

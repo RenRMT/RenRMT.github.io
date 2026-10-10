@@ -1,0 +1,70 @@
+# Site settings (Getij theme)
+title: REN Data
+tagline: Carrying aid data from messy source to actionable insight.
+description: "Projects and writing by me: data pipelines and quality checks for humanitarian and aid data, chart styling tools, and a few side projects."
+lang: en
+avatar: /assets/img/avatar.png
+
+# Sidebar navigation
+nav:
+  - title: Home
+    url: /
+  - title: Work
+    url: /work/
+  - title: Play
+    url: /play/
+  - title: Blog
+    url: /blog/
+  - title: About
+    url: /about/
+
+# Sidebar links
+social:
+  - title: GitHub
+    url: https://github.com/RenRMT
+  - title: RSS
+    url: /feed.xml
+  - title: LinkedIn
+    url: https://www.linkedin.com/in/renzeterpstra/
+
+# Project tracks: `track` in each _projects/*.md file matches an id here
+tracks:
+  - id: work
+    title: Work
+    url: /work/
+  - id: play
+    title: Play
+    url: /play/
+
+home:
+  featured: 3   # projects per track on the home page
+  posts: 3      # latest posts on the home page
+
+permalink: /blog/:year/:title/
+
+collections:
+  projects:
+    # Set to true and add _layouts/project.html to give each project its own
+    # page at /projects/<name>/. Cards then link there instead of to the repo.
+    output: false
+    permalink: /projects/:name/
+
+defaults:
+  - scope: { path: "" }
+    values: { layout: page }
+  - scope: { path: "", type: posts }
+    values: { layout: post }
+
+markdown: kramdown
+highlighter: rouge
+kramdown:
+  input: GFM
+
+strict_front_matter: true
+
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+  - jekyll-sitemap
+
+exclude: [README.md, Gemfile, Gemfile.lock, .ruby-version, vendor]

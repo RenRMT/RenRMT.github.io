@@ -1,0 +1,13 @@
+{% assign p = include.project %}
+{% capture href %}{% include project-href.html project=p %}{% endcapture %}
+<a class="project-card" href="{{ href }}" data-tags="{{ p.tags | join: '|' }}">
+  {% if p.image %}<img class="project-card__img" src="{{ p.image | relative_url }}" alt="" loading="lazy">{% else %}<span class="project-card__img project-card__img--empty" aria-hidden="true"></span>{% endif %}
+  <span class="project-card__body">
+    <span class="project-card__top">
+      <span class="project-card__title">{{ p.title }}</span>
+      {% if p.started %}<span class="project-card__year">{{ p.started | slice: 0, 4 }}</span>{% endif %}
+    </span>
+    <span class="project-card__desc">{{ p.summary }}</span>
+    {% if include.tags and p.tags %}<span class="project-card__tags">{% for t in p.tags %}<span class="tag">{{ t }}</span>{% endfor %}</span>{% endif %}
+  </span>
+</a>

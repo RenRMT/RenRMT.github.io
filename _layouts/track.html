@@ -1,0 +1,16 @@
+---
+layout: default
+---
+{% assign items = site.projects | where: "track", page.track | sort: "started" | reverse %}
+<header class="page__head">
+  <h1>{{ page.title }}</h1>
+  {% if page.description %}<p class="lead">{{ page.description }}</p>{% endif %}
+</header>
+{% if content != "" %}<div class="prose">{{ content }}</div>{% endif %}
+
+{% include tag-filters.html items=items target="project-grid" %}
+
+<div class="project-grid project-grid--dense" id="project-grid">
+  {% for p in items %}{% include project-card.html project=p tags=true %}{% endfor %}
+</div>
+<p class="empty" data-empty="project-grid" {% if items.size > 0 %}hidden{% endif %}>No projects here yet.</p>

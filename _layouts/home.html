@@ -1,0 +1,41 @@
+---
+layout: default
+---
+<section class="hero">
+  {% if page.eyebrow %}<p class="eyebrow">{{ page.eyebrow }}</p>{% endif %}
+  <h1 class="hero__title">{{ page.title }}</h1>
+  <div class="hero__lead">{{ content }}</div>
+  {% if page.buttons %}
+  <div class="hero__actions">
+    {% for b in page.buttons %}<a class="button{% if forloop.index > 1 %} button--outline{% endif %}" href="{{ b.url | relative_url }}">{{ b.title }}</a>{% endfor %}
+  </div>
+  {% endif %}
+</section>
+
+{% assign n = site.home.featured | default: 3 %}
+{% for track in site.tracks %}
+  {% assign items = site.projects | where: "track", track.id | sort: "started" | reverse %}
+  {% if items.size > 0 %}
+  {% assign featured = items | where: "featured", true %}
+  {% if featured.size == 0 %}{% assign featured = items %}{% endif %}
+  <section class="section">
+    <div class="section__head">
+      <h2>{{ track.title }}</h2>
+      <a class="more" href="{{ track.url | relative_url }}">All {{ track.title | downcase }} projects</a>
+    </div>
+    <div class="project-grid">
+      {% for p in featured limit: n %}{% include project-card.html project=p %}{% endfor %}
+    </div>
+  </section>
+  {% endif %}
+{% endfor %}
+
+{% if site.posts.size > 0 %}
+<section class="section">
+  <div class="section__head">
+    <h2>Latest writing</h2>
+    <a class="more" href="{{ '/blog/' | relative_url }}">All posts</a>
+  </div>
+  {% include post-list.html posts=site.posts limit=site.home.posts %}
+</section>
+{% endif %}

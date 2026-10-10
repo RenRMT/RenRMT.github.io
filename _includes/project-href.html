@@ -1,0 +1,10 @@
+{%- comment -%}
+  Where a project links to: its own page when the projects collection has
+  `output: true`, otherwise the live site, otherwise the repo.
+{%- endcomment -%}
+{%- assign coll = site.collections | where: "label", "projects" | first -%}
+{%- if coll.output -%}
+  {{- include.project.url | relative_url -}}
+{%- else -%}
+  {{- include.project.live | default: include.project.repo | relative_url -}}
+{%- endif -%}

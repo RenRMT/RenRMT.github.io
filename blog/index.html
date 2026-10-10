@@ -1,0 +1,25 @@
+---
+layout: default
+title: Blog
+description: Write-ups of projects, tools and things learned along the way.
+---
+<header class="page__head">
+  <h1>{{ page.title }}</h1>
+  <p class="lead">{{ page.description }}</p>
+</header>
+
+{% if site.posts.size > 0 %}
+  {% include tag-filters.html items=site.posts target="post-archive" %}
+  <div id="post-archive">
+    {% assign years = site.posts | group_by_exp: "post", "post.date | date: '%Y'" %}
+    {% for year in years %}
+    <section class="post-year" data-filter-group>
+      <h2 class="post-year__title">{{ year.name }}</h2>
+      {% include post-list.html posts=year.items %}
+    </section>
+    {% endfor %}
+  </div>
+  <p class="empty" data-empty="post-archive" hidden>No posts with this tag.</p>
+{% else %}
+  <p class="empty">No posts yet.</p>
+{% endif %}
