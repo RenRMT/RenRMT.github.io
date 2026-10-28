@@ -20,9 +20,15 @@ Project sites in other repos (`/iati-scout/`, `/style-guide/`, `/color-picker/` 
 
 Cards link to a project's `live` URL, or to its `repo` if there is none. To give each project its own page at `/projects/<name>/`, set `output: true` for the `projects` collection in `_config.yml` and add `_layouts/project.html`. Cards and post links then point there automatically, and the Markdown body of each project file becomes the page content.
 
+**Home note:** `note` in `index.md` front matter adds a margin note beside the hero (`label`, default "Now"; `text`, Markdown; `meta`, e.g. "since Sep 2026").
+
+**Portrait:** `portrait` in a page's front matter (`image`, `alt`, `caption`) puts a small portrait beside the prose, as on About.
+
 ## Theme
 
-Getij: teal sidebar layout with coral accents, light and dark mode. Fonts are IBM Plex Sans and IBM Plex Mono from Google Fonts. Colours and fonts are CSS variables at the top of `assets/css/getij.css`.
+Getij, built on the REN Data design system (Claude Design project "REN Data Design System"): teal sidebar layout with coral accents, light and dark mode. Newsreader for headings, IBM Plex Sans for text, IBM Plex Mono for metadata, self-hosted in `assets/fonts/`.
+
+`_sass/ren/` holds the design system's `tokens/*.css` files verbatim (as `.scss` partials). Update them by copying from the design system; site styles in `assets/css/getij.scss` only use the tokens.
 
 ## Run locally (Windows)
 

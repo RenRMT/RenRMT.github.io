@@ -2,13 +2,22 @@
 layout: default
 ---
 <section class="hero">
-  {% if page.eyebrow %}<p class="eyebrow">{{ page.eyebrow }}</p>{% endif %}
-  <h1 class="hero__title">{{ page.title }}</h1>
-  <div class="hero__lead">{{ content }}</div>
-  {% if page.buttons %}
-  <div class="hero__actions">
-    {% for b in page.buttons %}<a class="button{% if forloop.index > 1 %} button--outline{% endif %}" href="{{ b.url | relative_url }}">{{ b.title }}</a>{% endfor %}
+  <div class="hero__main">
+    {% if page.eyebrow %}<p class="eyebrow">{{ page.eyebrow }}</p>{% endif %}
+    <h1 class="hero__title">{{ page.title }}</h1>
+    <div class="hero__lead">{{ content }}</div>
+    {% if page.buttons %}
+    <div class="hero__actions">
+      {% for b in page.buttons %}<a class="button{% if forloop.index > 1 %} button--outline{% endif %}" href="{{ b.url | relative_url }}">{{ b.title }}</a>{% endfor %}
+    </div>
+    {% endif %}
   </div>
+  {% if page.note %}
+  <aside class="hero__note">
+    <p class="eyebrow eyebrow--mark">{{ page.note.label | default: "Now" }}</p>
+    {{ page.note.text | markdownify }}
+    {% if page.note.meta %}<span class="hero__note-meta">{{ page.note.meta }}</span>{% endif %}
+  </aside>
   {% endif %}
 </section>
 
