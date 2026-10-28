@@ -1,9 +1,11 @@
 <aside class="sidebar">
-  <a class="sidebar__id" href="{{ '/' | relative_url }}">
-    {% if site.avatar %}<img class="sidebar__avatar" src="{{ site.avatar | relative_url }}" alt="">{% else %}<span class="sidebar__avatar sidebar__avatar--empty" aria-hidden="true"></span>{% endif %}
-    <span class="sidebar__name">{{ site.title }}</span>
-  </a>
-  {% if site.tagline %}<p class="sidebar__tagline">{{ site.tagline }}</p>{% endif %}
+  <div class="sidebar__head">
+    <a class="sidebar__id" href="{{ '/' | relative_url }}">
+      {% if site.avatar %}<img class="sidebar__avatar" src="{{ site.avatar | relative_url }}" alt="">{% else %}<span class="sidebar__avatar sidebar__avatar--empty" aria-hidden="true"></span>{% endif %}
+      <span class="sidebar__name">{{ site.title }}</span>
+    </a>
+    {% if site.tagline %}<p class="sidebar__tagline">{{ site.tagline }}</p>{% endif %}
+  </div>
 
   <nav class="sidebar__nav" aria-label="Main">
     {% for item in site.nav %}

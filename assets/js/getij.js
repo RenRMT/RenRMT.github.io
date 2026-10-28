@@ -32,4 +32,11 @@
       if (empty) empty.hidden = shown > 0;
     });
   });
+
+  document.querySelectorAll('[data-filter-reset]').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      var all = document.querySelector('[data-filters="' + btn.dataset.filterReset + '"] [data-filter=""]');
+      if (all) all.click();
+    });
+  });
 })();

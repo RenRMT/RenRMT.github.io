@@ -1,10 +1,18 @@
 ---
 layout: default
 ---
-<article>
-  <header class="page__head">
-    <h1>{{ page.title }}</h1>
-    {% if page.description %}<p class="lead">{{ page.description }}</p>{% endif %}
-  </header>
-  <div class="prose">{{ content }}</div>
+<article{% if page.portrait %} class="with-portrait"{% endif %}>
+  <div>
+    <header class="page__head">
+      <h1>{{ page.title }}</h1>
+      {% if page.description %}<p class="lead">{{ page.description }}</p>{% endif %}
+    </header>
+    <div class="prose">{{ content }}</div>
+  </div>
+  {% if page.portrait %}
+  <figure class="portrait">
+    <img src="{{ page.portrait.image | relative_url }}" alt="{{ page.portrait.alt }}">
+    {% if page.portrait.caption %}<figcaption>{{ page.portrait.caption }}</figcaption>{% endif %}
+  </figure>
+  {% endif %}
 </article>

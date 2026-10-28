@@ -6,7 +6,7 @@ layout: default
     <p class="eyebrow"><time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%-d %B %Y" }}</time></p>
     <h1>{{ page.title }}</h1>
     {% if page.description %}<p class="lead">{{ page.description }}</p>{% endif %}
-    {% if page.tags.size > 0 %}<p class="post__tags">{% for t in page.tags %}<span class="tag">{{ t }}</span>{% endfor %}</p>{% endif %}
+    {% if page.tags.size > 0 %}<p class="post__tags tags">{% for t in page.tags %}<span class="tag">{{ t }}</span>{% endfor %}</p>{% endif %}
   </header>
 
   <div class="prose">{{ content }}</div>
@@ -16,7 +16,7 @@ layout: default
     {% if project %}
     {% capture href %}{% include project-href.html project=project %}{% endcapture %}
     <aside class="post__project">
-      <p class="eyebrow">Project</p>
+      <p class="eyebrow eyebrow--mark">Project</p>
       <a href="{{ href }}">{{ project.title }}</a>
       <p>{{ project.summary }}</p>
     </aside>
