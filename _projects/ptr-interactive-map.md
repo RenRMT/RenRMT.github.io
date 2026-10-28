@@ -7,5 +7,4 @@ started: "2026-08"
 tags: [Maps, Morrowind]
 repo: https://github.com/RenRMT/ptr_interactive_map
 live: /ptr_interactive_map/
-featured: true
 ---

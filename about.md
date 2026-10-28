@@ -6,9 +6,9 @@ portrait:
   alt: Illustrated portrait of Renze
   caption: — Renze Terpstra
 ---
-I build data pipelines and quality checks for humanitarian and aid data, chart styling tools, and the occasional fun side project.
+I build data pipelines and quality checks for humanitarian and aid data, tools that style charts, and a few personal projects.
 
-I believe data-driven work should be data supported work. I help people transform messy or unclear data into actionable insights to support deliberate decision making.
+Data should not only drive a decision, it should support it. I help people turn messy or unclear data into numbers they can check, compare and act on.
 
 [Let's talk](mailto:data@renzeterpstra.com){: .button}
 

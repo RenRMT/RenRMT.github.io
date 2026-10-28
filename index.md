@@ -8,4 +8,4 @@ buttons:
   - title: Play
     url: /play/
 ---
-Data pipelines and quality checks for humanitarian and aid data, chart styling tools, and a few side projects.
+Data pipelines and quality checks for humanitarian and aid data, tools that style charts, and a few side projects.

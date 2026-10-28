@@ -1,7 +1,7 @@
 ---
 title: pics
 track: play
-summary: A photo gallery.
+summary: A minimalist gallery of some of my photos.
 image: /assets/img/projects/pics.webp
 started: "2026-10"
 tags: [Photos, JavaScript]
