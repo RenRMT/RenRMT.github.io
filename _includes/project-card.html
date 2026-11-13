@@ -5,7 +5,6 @@
   <span class="project-card__body">
     <span class="project-card__top">
       <span class="project-card__title">{{ p.title }}</span>
-      {% if p.started %}<span class="project-card__year">{{ p.started | slice: 0, 4 }}</span>{% endif %}
     </span>
     <span class="project-card__desc">{{ p.summary }}</span>
     {% if include.tags and p.tags %}<span class="project-card__tags tags">{% for t in p.tags %}<span class="tag">{{ t }}</span>{% endfor %}</span>{% endif %}

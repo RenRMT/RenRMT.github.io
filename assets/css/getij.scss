@@ -83,7 +83,6 @@
 .project-card__top { display: flex; justify-content: space-between; align-items: baseline; gap: 8px; }
 .project-card__title { flex: 1 1 auto; min-width: 0; overflow-wrap: break-word; font-weight: 700; color: var(--heading); text-decoration-color: var(--accent); text-decoration-thickness: 2px; text-underline-offset: 3px; }
 .project-card:hover .project-card__title { text-decoration-line: underline; }
-.project-card__year { flex: none; font: var(--fs-micro) var(--font-mono); color: var(--muted); }
 .project-card__desc { font-size: var(--fs-small); line-height: var(--lh-small); color: var(--muted); }
 .project-card__tags { margin-top: 4px; }
 .empty { color: var(--muted); }
